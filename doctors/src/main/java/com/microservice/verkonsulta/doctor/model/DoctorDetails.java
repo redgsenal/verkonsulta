@@ -16,6 +16,18 @@ public class DoctorDetails {
     private String country;
     private String address;
     private String gender;
+    
+    public DoctorDetails(){}
+
+    public DoctorDetails(String doctorId, String firstName, String lastName, String dateOfBirth, String country, String address, String gender){
+        this.doctorId = doctorId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.country = country;
+        this.address = address;
+        this.gender = gender;
+    }
 
     public String getDoctorId() {
         return doctorId;

@@ -20,6 +20,15 @@ public class Appointment {
         // TODO constructor is empty
     }
 
+    public Appointment(String appointmentId, String patientId, String doctorId, String startDate, String endDate, String notes){
+        this.appointmentId = appointmentId;
+        this.patientId = patientId;
+        this.doctorId = doctorId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.notes = notes;
+    }
+
     public String getAppointmentId() {
         return appointmentId;
     }

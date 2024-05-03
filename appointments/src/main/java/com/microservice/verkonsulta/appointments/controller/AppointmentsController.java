@@ -13,11 +13,11 @@ import com.microservice.verkonsulta.appointments.model.Appointment;
 @RequestMapping("/appointments")
 public class AppointmentsController {
     
-    @Autowired
-    private RestTemplate restTemplate;
+    // @Autowired
+    // private RestTemplate restTemplate;
 
     @GetMapping(value="/{appointmentId}")
     public Appointment getAppointment(@PathVariable String appointmentId){
-        return new Appointment();
+        return new Appointment("1", "1", "1", "2024-05-05'T'10:00:00.000", "2024-05-05'T'11:20:00.000", "regular check-up");
     }
 }
