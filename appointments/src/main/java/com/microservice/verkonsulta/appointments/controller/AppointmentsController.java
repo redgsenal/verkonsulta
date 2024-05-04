@@ -1,6 +1,7 @@
 package com.microservice.verkonsulta.appointments.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,8 @@ public class AppointmentsController {
     @GetMapping(value="/{appointmentId}")
     public Appointment getAppointment(@PathVariable String appointmentId){
 
-        PatientDetails patient = restTemplate.getForObject("http://localhost:9010/patient/1", PatientDetails.class);
-        DoctorDetails doctor = restTemplate.getForObject("http://localhost:9020/doctor/1", DoctorDetails.class);
+        PatientDetails patient = restTemplate.getForObject("http://patient-service/patient/1", PatientDetails.class);
+        DoctorDetails doctor = restTemplate.getForObject("http://doctor-service/doctor/1", DoctorDetails.class);
 
         Appointment appointment = new Appointment("1", "1", "1", "2024-05-05'T'10:00:00.000", "2024-05-05'T'11:20:00.000", "regular check-up");
         appointment.setPatient(patient);
