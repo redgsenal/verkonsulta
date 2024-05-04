@@ -4,11 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "appointments")
+// @Entity
+// @Table(name = "appointments")
 public class Appointment {
 
-    @Id
+    //@Id
     private String appointmentId;
     private String patientId;
     private String doctorId;
@@ -16,11 +16,15 @@ public class Appointment {
     private String endDate;
     private String notes;
 
+    private PatientDetails patient;
+    private DoctorDetails doctor;
+
     public Appointment() {
         // TODO constructor is empty
     }
 
-    public Appointment(String appointmentId, String patientId, String doctorId, String startDate, String endDate, String notes){
+    public Appointment(String appointmentId, String patientId, String doctorId, String startDate, String endDate,
+            String notes) {
         this.appointmentId = appointmentId;
         this.patientId = patientId;
         this.doctorId = doctorId;
@@ -75,6 +79,22 @@ public class Appointment {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public PatientDetails getPatient() {
+        return patient;
+    }
+
+    public void setPatient(PatientDetails patient) {
+        this.patient = patient;
+    }
+
+    public DoctorDetails getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(DoctorDetails doctor) {
+        this.doctor = doctor;
     }
 
 }
