@@ -4,5 +4,7 @@
 			"path": "../service-registration"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
 }
